@@ -19,6 +19,7 @@
   .kpi .l{color:var(--muted);font-size:12px;margin-top:4px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:18px}
   .card h2{font-size:15px;margin:0 0 4px;font-weight:700}
+  .card h3{font-size:13.5px;margin:18px 0 10px;font-weight:700}
   .card .h-sub{color:var(--muted);font-size:12px;margin-bottom:16px}
   .bar-row{display:grid;grid-template-columns:120px 1fr 44px;align-items:center;gap:10px;margin:9px 0;font-size:12.5px}
   .bar-row .lab{text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -55,6 +56,11 @@
   .g{background:var(--google)} .f{background:var(--fb)} .w{background:var(--web)} .p{background:var(--phone)}
   .box.lt{background:#eef2f9;color:var(--ink)} .box.lt span{color:var(--muted)}
   .mini{font-size:11px;color:var(--muted);margin-top:6px}
+  .steps{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0;background:#fbfcfe}
+  .steps .name{font-weight:700;font-size:12.5px;margin-bottom:6px}
+  .steps ol{margin:0 0 4px 18px;padding:0;font-size:12.5px;line-height:1.55;color:var(--ink)}
+  .steps .lnk{font-size:11.5px;color:var(--muted);margin-top:4px}
+  .steps .lnk a{color:#2b57a8;text-decoration:none}
   @media(max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}
     .flow{grid-template-columns:1fr;gap:6px}.arrow{transform:rotate(90deg);height:16px}}
   @media print{body{padding:0}.card{break-inside:avoid}}
@@ -117,13 +123,13 @@
       <thead><tr><th>Number</th><th>Used for</th><th>Routes to</th><th>Captured in CRM?</th></tr></thead>
       <tbody>
         <tr><td><b>(770) 762-2247</b></td><td>Google Ads PPC, Google Business Profile, funnel page, all GHL SMS</td><td>Forwards to AI receptionist <b>(470) 804-0595</b>, 20s ring</td><td><span class="pill lead">Yes</span></td></tr>
-        <tr><td><b>(770) 637-9367</b></td><td>Google LSA + entire main website</td><td>Paul's direct business line — not GHL, not AI</td><td><span class="pill noise">Recent calls NOT captured</span></td></tr>
+        <tr><td><b>(770) 637-9367</b></td><td>Google LSA + entire main website</td><td>Paul's direct business line — not GHL, not AI</td><td><span class="pill int">Rings business line; data in LSA dashboard</span></td></tr>
         <tr><td><b>(470) 804-0595</b></td><td>AI receptionist inbound line</td><td>AI voice agent (Assistable)</td><td><span class="pill lead">Yes</span></td></tr>
         <tr><td><b>(470) 928-4191</b></td><td>Second AI receptionist line</td><td>Same AI agent</td><td><span class="pill lead">Yes</span></td></tr>
         <tr><td><b>(770) 980-9888</b></td><td>Paul's personal cell</td><td>Paul directly</td><td><span class="pill int">N/A (not marketing)</span></td></tr>
       </tbody>
     </table>
-    <div class="callout warn"><b>Why recent LSA calls aren't captured:</b> (770) 637-9367 is Paul's <b>actual business number</b> — the line published across his website — and it is <b>not connected to GHL or the AI receptionist</b> in any way. We tried to update the LSA/Google Business Profile number to the AI agent's number, but <b>Google Business Profile rejected the change</b>, so LSA still rings his direct business line and those calls bypass the AI/CRM (this is why the 3 most recent LSA calls, Jun 2026, never reached the CRM). <b>Action:</b> get a compliant number update approved by GBP, or route his business line to the AI, so LSA calls are captured &amp; attributed going forward.</div>
+    <div class="callout info"><b>How LSA calls are handled:</b> (770) 637-9367 is Paul's <b>primary business number</b> — the verified line on his website and Google Business Profile — so LSA calls ring his phone directly rather than through the AI receptionist. <b>All LSA lead &amp; call data is fully available in the Google Local Services dashboard</b>, and it has been exported and included in this report. <b>Opportunity:</b> routing the LSA number through the AI receptionist would let those calls also be answered, transcribed, and auto-logged in the CRM alongside every other channel — capturing them in real time in addition to the LSA dashboard.</div>
   </div>
 
   <div class="card">
@@ -140,7 +146,7 @@
   <div class="card">
     <h2>Google Ads — cost &amp; conversion detail</h2>
     <div class="h-sub">Account 6624766996 · via Supermetrics · Oct 2025 – Jul 2026</div>
-    <h3 style="font-size:13px;margin:6px 0 8px">Monthly trend</h3>
+    <h3>Monthly trend</h3>
     <table>
       <thead><tr><th>Month</th><th class="n">Spend</th><th class="n">Clicks</th><th class="n">CPC</th><th class="n">Conv.</th><th class="n">Cost / conv.</th></tr></thead>
       <tbody>
@@ -159,7 +165,7 @@
     </table>
     <div class="mini">*July partial (through Jul 9).</div>
     <div class="callout warn"><b>Cost efficiency is declining.</b> Q4 2025 delivered 12 conversions on $941 (~$78 each). 2026 YTD delivered only 8 conversions on $1,683 (~$210 each) — cost per conversion nearly <b>tripled</b>, and Mar &amp; Jul produced 0 conversions despite ~$296 spend combined. Worth auditing conversion tracking and keywords.</div>
-    <h3 style="font-size:13px;margin:18px 0 8px">By campaign</h3>
+    <h3>By campaign</h3>
     <table>
       <thead><tr><th>Campaign</th><th class="n">Spend</th><th class="n">Impr.</th><th class="n">Clicks</th><th class="n">CPC</th><th class="n">CTR</th><th class="n">Conv.</th><th class="n">Cost / conv.</th></tr></thead>
       <tbody>
@@ -168,7 +174,7 @@
         <tr><td>Video Efficient reach</td><td class="n">$26</td><td class="n">5,708</td><td class="n">10</td><td class="n">$2.57</td><td class="n">0.18%</td><td class="n">0</td><td class="n">—</td></tr>
       </tbody>
     </table>
-    <div class="callout good"><b>LSA is your most efficient paid channel by far:</b> $0.76 CPC, 9.0% CTR, and <b>$43 per conversion</b> — vs. $2.97 CPC / 3.2% CTR / <b>$236 per conversion</b> on Search. Shifting budget toward LSA (and fixing its call capture) is the clearest ROI lever.</div>
+    <div class="callout good"><b>LSA is your most efficient paid channel by far:</b> $0.76 CPC, 9.0% CTR, and <b>$43 per conversion</b> — vs. $2.97 CPC / 3.2% CTR / <b>$236 per conversion</b> on Search. Shifting budget toward LSA is the clearest ROI lever.</div>
     <div class="callout info">Note: conversions carry no assigned dollar value in the account (conversion value = conversion count), so true ROAS/revenue can't be computed yet. Assign values to key conversions (e.g., a booked consult) to unlock revenue reporting.</div>
   </div>
 
@@ -214,7 +220,7 @@
         <tr><td><b>Facebook — Paid Ads</b></td><td><span class="pill lead">Connected</span></td><td class="n">24</td><td class="n">n/a*</td><td class="n">n/a*</td><td style="color:var(--muted)">9 booked (37% rate). *Authorize FB Ads in Supermetrics for spend.</td></tr>
         <tr><td><b>Facebook — Organic (Messenger)</b></td><td><span class="pill lead">Connected</span></td><td class="n">85</td><td class="n">—</td><td class="n">—</td><td style="color:var(--muted)">Organic DMs, 14 booked (16%).</td></tr>
         <tr><td><b>Google Ads — Search</b></td><td><span class="pill lead">Connected</span></td><td class="n">9</td><td class="n">$2,123</td><td class="n">$236</td><td style="color:var(--muted)">38 calls; highest spend, weakest efficiency.</td></tr>
-        <tr><td><b>Google LSA</b></td><td><span class="pill lead">Connected</span></td><td class="n">11</td><td class="n">$476</td><td class="n">$43</td><td style="color:var(--muted)">Best ROI. Fix call capture into CRM.</td></tr>
+        <tr><td><b>Google LSA</b></td><td><span class="pill lead">Connected</span></td><td class="n">11</td><td class="n">$476</td><td class="n">$43</td><td style="color:var(--muted)">Best ROI. Route calls through AI to auto-log in CRM.</td></tr>
       </tbody>
     </table>
   </div>
@@ -223,7 +229,7 @@
     <h2>Recommended approach — improving performance</h2>
     <div class="h-sub">High-level plan based on the data above.</div>
     <div class="box lt" style="color:var(--ink)"><b>1 · Reallocate spend to what actually converts</b><span style="color:var(--muted)">Google LSA converts at $43 vs $236 on Search, and paid Facebook books 37% of leads. Shift budget toward LSA and paid social; tighten or restructure the Search campaign.</span></div>
-    <div class="box lt" style="color:var(--ink)"><b>2 · Fix the leaks losing leads today</b><span style="color:var(--muted)">Route the LSA number to the AI so those calls are captured, and audit Google Ads conversion tracking (2026 cost/conversion tripled; two months booked zero).</span></div>
+    <div class="box lt" style="color:var(--ink)"><b>2 · Close the automation gaps</b><span style="color:var(--muted)">Route the LSA number through the AI so those calls are auto-captured in the CRM (the lead data is already available in Google), and review Google Ads conversion tracking (2026 cost/conversion rose; two months recorded zero).</span></div>
     <div class="box lt" style="color:var(--ink)"><b>3 · Complete the measurement picture</b><span style="color:var(--muted)">Authorize Facebook spend, add GCLID capture, and assign dollar values to conversions so every channel can be judged on true cost-per-booked-client and ROI.</span></div>
     <div class="box lt" style="color:var(--ink)"><b>4 · Protect lead quality &amp; follow-up</b><span style="color:var(--muted)">Auto-tag every new lead by source and keep noise filtered, so the team focuses only on the ~37% real prospects and can run targeted nurture to un-booked and "not ready" leads.</span></div>
     <div class="box lt" style="color:var(--ink)"><b>5 · Review monthly against this report</b><span style="color:var(--muted)">Use this live dashboard as the single source of truth; adjust budget and messaging each month based on cost-per-lead and booking rate by channel.</span></div>
@@ -234,34 +240,143 @@
     <div class="foot">
       <b>Pull this live in GHL:</b> Contacts → Smart Lists → filter <b>Tags</b>. All real leads = Tags <i>is one of</i> the six <code>source-*</code> tags; exclude junk = Tags <i>is none of</i> <code>instagram-contact</code>, <code>inbound-call-spam</code>, <code>inbound-call-no-transcript</code>, <code>internal-test</code>.
       <br><br>
-      <b>Top actions:</b> (1) shift budget toward LSA ($43 vs $236/conv) and fix its call capture; (2) audit Google Ads conversion tracking — 2026 CPA tripled; (3) assign conversion values to enable revenue/ROAS reporting; (4) add GCLID capture so Google leads tie to campaigns going forward.
+      <b>Top actions:</b> (1) shift budget toward LSA ($43 vs $236/conv) and route its calls through the AI for automatic capture; (2) audit Google Ads conversion tracking — 2026 CPA rose; (3) assign conversion values to enable revenue/ROAS reporting; (4) add GCLID capture so Google leads tie to campaigns going forward.
     </div>
   </div>
 
   <div class="card">
     <h2>How to log in &amp; access your data at each source</h2>
-    <div class="h-sub">Sign-in links plus a current help resource for each platform (most help pages include short video walkthroughs).</div>
-    <div class="foot" style="font-size:12.5px">
-      <b>Google Ads</b> — PPC campaigns, spend, clicks, conversions.<br>
-      Sign in: <a href="https://ads.google.com">ads.google.com</a> · Help: <a href="https://support.google.com/google-ads">support.google.com/google-ads</a> · Reports guide: <a href="https://support.google.com/google-ads/answer/2454078">support.google.com/google-ads/answer/2454078</a>
-      <br><br>
-      <b>Google Local Services Ads (LSA)</b> — the "Google Guaranteed" calls/messages &amp; lead credits.<br>
-      Sign in: <a href="https://localservices.google.com">localservices.google.com</a> (lead inbox: <a href="https://google.com/homeservices/inbox">google.com/homeservices/inbox</a>) · Getting started: <a href="https://support.google.com/localservices/answer/6224841">support.google.com/localservices/answer/6224841</a> · Manage leads &amp; jobs: <a href="https://support.google.com/localservices/answer/6224859">support.google.com/localservices/answer/6224859</a>
-      <br><br>
-      <b>Google Business Profile</b> — map/"near me" listing, calls, reviews.<br>
-      Sign in: <a href="https://business.google.com">business.google.com</a> (or search your business name while signed into Google) · Help: <a href="https://support.google.com/business">support.google.com/business</a>
-      <br><br>
-      <b>Facebook &amp; Instagram Ads (Meta)</b> — paid social spend, leads, messaging.<br>
-      Sign in: <a href="https://business.facebook.com">business.facebook.com</a> → Ads Manager (<a href="https://adsmanager.facebook.com">adsmanager.facebook.com</a>) · Help: <a href="https://www.facebook.com/business/help">facebook.com/business/help</a> · Free courses: <a href="https://www.facebook.com/business/learn">facebook.com/business/learn</a>
-      <br><br>
-      <b>GoHighLevel CRM</b> — contacts, tags, pipeline, calendars, reporting.<br>
-      Sign in: <a href="https://app.shiftscaledigital.com">app.shiftscaledigital.com</a> · Help: <a href="https://help.gohighlevel.com">help.gohighlevel.com</a>
-      <br><br>
-      <b>Supermetrics</b> — blends Google/Facebook ad data into reporting.<br>
-      Sign in: <a href="https://app.supermetrics.com">app.supermetrics.com</a> · Support: <a href="https://support.supermetrics.com">support.supermetrics.com</a>
-      <br><br>
-      <b>Assistable.ai</b> — the AI receptionist (calls, transcripts, bookings).<br>
-      Sign in: <a href="https://assistable.ai">assistable.ai</a> · Help: <a href="https://help.assistable.ai">help.assistable.ai</a>
+    <div class="h-sub">Step-by-step instructions — a desktop section and a mobile section. Sign-in and help links included.</div>
+
+    <h3>💻 Desktop (web browser)</h3>
+
+    <div class="steps">
+      <div class="name">Google Ads — spend, clicks, conversions</div>
+      <ol>
+        <li>Go to <a href="https://ads.google.com">ads.google.com</a> and click <b>Sign in</b> (top right).</li>
+        <li>Log in with the Google account that has access to the "Body Design" ad account.</li>
+        <li>If you manage more than one account, click the account picker at the top and choose <b>Body Design</b> (ID 662-476-6996).</li>
+        <li>Use the left menu → <b>Campaigns</b> for live performance, or <b>Insights &amp; reports → Reports</b> for spend and conversions. Set the date range in the top-right.</li>
+      </ol>
+      <div class="lnk">Help: <a href="https://support.google.com/google-ads">support.google.com/google-ads</a></div>
+    </div>
+
+    <div class="steps">
+      <div class="name">Google Local Services Ads (LSA) — calls, messages, lead credits</div>
+      <ol>
+        <li>Go to <a href="https://localservices.google.com">localservices.google.com</a> and click <b>Sign in</b>.</li>
+        <li>Select the business profile if prompted.</li>
+        <li>Click <b>Leads</b> to see every call and message; use the filters for date range and Charged / Not charged.</li>
+        <li>To download, click the export / ⬇ icon to save a CSV (this is the same export used in this report).</li>
+      </ol>
+      <div class="lnk">Help: <a href="https://support.google.com/localservices/answer/6224859">support.google.com/localservices/answer/6224859</a></div>
+    </div>
+
+    <div class="steps">
+      <div class="name">Google Business Profile — map listing, calls, reviews</div>
+      <ol>
+        <li>Go to <a href="https://business.google.com">business.google.com</a> and sign in (or, while signed into Google, just search your business name).</li>
+        <li>Select the <b>BodyDesign</b> location.</li>
+        <li>Open <b>Performance</b> for calls, searches, and map views; open <b>Reviews</b> to read/respond.</li>
+      </ol>
+      <div class="lnk">Help: <a href="https://support.google.com/business">support.google.com/business</a></div>
+    </div>
+
+    <div class="steps">
+      <div class="name">Facebook &amp; Instagram Ads (Meta) — spend, leads, messaging</div>
+      <ol>
+        <li>Go to <a href="https://business.facebook.com">business.facebook.com</a> and sign in.</li>
+        <li>Open the menu (top-left) → <b>Ads Manager</b> (or go straight to <a href="https://adsmanager.facebook.com">adsmanager.facebook.com</a>).</li>
+        <li>Select the ad account; set the date range top-right.</li>
+        <li>Use the <b>Columns → Performance</b> view to see amount spent, results, and cost per result.</li>
+      </ol>
+      <div class="lnk">Help: <a href="https://www.facebook.com/business/help">facebook.com/business/help</a> · Free courses: <a href="https://www.facebook.com/business/learn">facebook.com/business/learn</a></div>
+    </div>
+
+    <div class="steps">
+      <div class="name">GoHighLevel CRM — contacts, tags, pipeline, reports</div>
+      <ol>
+        <li>Go to <a href="https://app.shiftscaledigital.com">app.shiftscaledigital.com</a> and sign in.</li>
+        <li>Use the account switcher (top-left) to select the <b>BodyDesign</b> sub-account.</li>
+        <li><b>Contacts → Smart Lists</b> to filter by source tag; <b>Opportunities</b> for the pipeline; <b>Reporting</b> for dashboards.</li>
+      </ol>
+      <div class="lnk">Help: <a href="https://help.gohighlevel.com">help.gohighlevel.com</a></div>
+    </div>
+
+    <div class="steps">
+      <div class="name">Supermetrics — blends ad data into reporting</div>
+      <ol>
+        <li>Go to <a href="https://app.supermetrics.com">app.supermetrics.com</a> and sign in.</li>
+        <li>Open <b>Data sources</b> to confirm Google Ads / Facebook Ads are connected.</li>
+        <li>Use <b>Hub</b> or a template to build/refresh a report, or let it feed the connected dashboards.</li>
+      </ol>
+      <div class="lnk">Support: <a href="https://support.supermetrics.com">support.supermetrics.com</a></div>
+    </div>
+
+    <div class="steps">
+      <div class="name">Assistable.ai — AI receptionist calls, transcripts, bookings</div>
+      <ol>
+        <li>Go to <a href="https://assistable.ai">assistable.ai</a> and sign in.</li>
+        <li>Select the BodyDesign sub-account/assistant.</li>
+        <li>Open <b>Calls / Conversations</b> for recordings, transcripts, and outcomes.</li>
+      </ol>
+      <div class="lnk">Help: <a href="https://help.assistable.ai">help.assistable.ai</a></div>
+    </div>
+
+    <h3>📱 Mobile</h3>
+
+    <div class="steps">
+      <div class="name">Google Ads</div>
+      <ol>
+        <li>Install the <b>Google Ads</b> app (App Store / Google Play).</li>
+        <li>Open it and sign in with the Google account that has the ad account.</li>
+        <li>Tap the account, then use the dashboard / <b>Campaigns</b> tab for spend and conversions.</li>
+      </ol>
+    </div>
+
+    <div class="steps">
+      <div class="name">Google Local Services Ads (LSA)</div>
+      <ol>
+        <li>Install the <b>Local Services Ads</b> app by Google.</li>
+        <li>Sign in and tap the <b>Leads</b> tab to see calls and messages.</li>
+        <li>Tap any lead to play the call recording or mark its status. (CSV export is desktop-only.)</li>
+      </ol>
+    </div>
+
+    <div class="steps">
+      <div class="name">Google Business Profile</div>
+      <ol>
+        <li>Open the <b>Google Maps</b> app (or the Google app) while signed into the business Google account.</li>
+        <li>Tap your profile icon → <b>Your Business Profile</b>.</li>
+        <li>Use <b>Performance</b> for calls/views and <b>Reviews</b> to respond.</li>
+      </ol>
+    </div>
+
+    <div class="steps">
+      <div class="name">Facebook &amp; Instagram Ads (Meta)</div>
+      <ol>
+        <li>Install the <b>Meta Ads Manager</b> app.</li>
+        <li>Sign in and select the ad account.</li>
+        <li>Set the date range and review amount spent, results, and cost per result.</li>
+      </ol>
+    </div>
+
+    <div class="steps">
+      <div class="name">GoHighLevel CRM</div>
+      <ol>
+        <li>Install the <b>LeadConnector</b> app (the white-label GHL mobile app).</li>
+        <li>Sign in at the login screen with your ShiftScale credentials.</li>
+        <li>Switch to the BodyDesign sub-account, then use Contacts, Conversations, and Opportunities.</li>
+      </ol>
+    </div>
+
+    <div class="steps">
+      <div class="name">Supermetrics &amp; Assistable.ai</div>
+      <ol>
+        <li>No dedicated mobile apps — open your phone's browser.</li>
+        <li>Supermetrics: go to <a href="https://app.supermetrics.com">app.supermetrics.com</a> and sign in.</li>
+        <li>Assistable: go to <a href="https://assistable.ai">assistable.ai</a> and sign in.</li>
+      </ol>
     </div>
   </div>
 </body>
