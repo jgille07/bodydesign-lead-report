@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BodyDesign — Lead Source Report</title>
+<title>BodyDesign — Lead Source & Marketing Report</title>
 <style>
   :root{color-scheme:light;--bg:#f6f8fc;--card:#ffffff;--ink:#1c2536;--muted:#5f6b85;--line:#e6ebf3;
-    --lead:#2e9e6b;--noise:#d9663f;--int:#8a94a8;--track:#eef2f9;}
+    --lead:#2e9e6b;--noise:#d9663f;--int:#8a94a8;--track:#eef2f9;
+    --google:#3b74d4;--fb:#7a5cd6;--web:#2fa8b8;--phone:#e0912e;}
   *{box-sizing:border-box}
   html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:28px;max-width:1000px;margin:0 auto}
-  h1{font-size:22px;margin:0 0 2px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:28px;max-width:1040px;margin:0 auto}
+  h1{font-size:23px;margin:0 0 2px}
   .sub{color:var(--muted);font-size:13px;margin-bottom:22px}
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
   .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
-  .kpi .n{font-size:28px;font-weight:700}
+  .kpi .n{font-size:26px;font-weight:700}
   .kpi .l{color:var(--muted);font-size:12px;margin-top:4px}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:18px}
-  .card h2{font-size:14px;margin:0 0 16px;font-weight:600}
-  .full{grid-column:1/-1}
+  .card h2{font-size:15px;margin:0 0 4px;font-weight:700}
+  .card .h-sub{color:var(--muted);font-size:12px;margin-bottom:16px}
   .bar-row{display:grid;grid-template-columns:120px 1fr 44px;align-items:center;gap:10px;margin:9px 0;font-size:12.5px}
-  .bar-row .lab{color:var(--ink);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-row .lab{text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .bar-track{background:var(--track);border-radius:6px;height:20px;overflow:hidden}
   .bar-fill{height:100%;border-radius:6px}
   .bar-row .val{font-variant-numeric:tabular-nums;font-weight:600;text-align:right}
@@ -32,39 +32,146 @@
   table{width:100%;border-collapse:collapse;font-size:12.5px}
   th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
   th{color:var(--muted);font-weight:600}
-  td.n{text-align:right;font-variant-numeric:tabular-nums}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  tr.tot td{font-weight:700;border-top:2px solid var(--line)}
   .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600}
   .pill.lead{background:rgba(46,158,107,.14);color:#1f7a50}
   .pill.noise{background:rgba(217,102,63,.14);color:#b04d29}
   .pill.int{background:rgba(95,107,133,.14);color:#4a5670}
   .foot{color:var(--muted);font-size:12px;margin-top:8px;line-height:1.55}
   code{background:#eef2f9;padding:1px 6px;border-radius:5px;color:#2b57a8}
-  @media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}
+  .callout{border-radius:10px;padding:12px 14px;font-size:12.5px;line-height:1.5;margin-top:12px}
+  .callout.warn{background:#fdf0ea;border:1px solid #f4c4ad;color:#8f3d1c}
+  .callout.good{background:#eaf7f0;border:1px solid #b6e2cc;color:#1f6a46}
+  .callout.info{background:#eaf1fb;border:1px solid #bcd4f5;color:#2b4d80}
+  .flow{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr 22px 1fr;gap:8px;align-items:stretch}
+  .stage{background:#fbfcfe;border:1px solid var(--line);border-radius:10px;padding:12px}
+  .stage-h{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:10px}
+  .arrow{display:flex;align-items:center;justify-content:center;color:#aab4c8;font-size:20px;font-weight:700}
+  .box{border-radius:8px;padding:8px 10px;margin:7px 0;font-size:11.5px;line-height:1.35;color:#fff}
+  .box b{display:block;font-size:12px}
+  .box span{display:block;opacity:.9;font-size:10.5px;margin-top:2px}
+  .g{background:var(--google)} .f{background:var(--fb)} .w{background:var(--web)} .p{background:var(--phone)}
+  .box.lt{background:#eef2f9;color:var(--ink)} .box.lt span{color:var(--muted)}
+  .mini{font-size:11px;color:var(--muted);margin-top:6px}
+  @media(max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}
+    .flow{grid-template-columns:1fr;gap:6px}.arrow{transform:rotate(90deg);height:16px}}
   @media print{body{padding:0}.card{break-inside:avoid}}
 </style>
 </head>
 <body>
-  <h1>BodyDesign Personal Training — Lead Source Report</h1>
-  <div class="sub">506 contacts, classified by acquisition source · includes Google LSA export · updated Jul 9, 2026</div>
+  <h1>BodyDesign Personal Training — Lead Source & Marketing Report</h1>
+  <div class="sub">506 CRM contacts + Google Ads performance (Oct 2025–Jul 2026) · updated Jul 9, 2026</div>
 
   <div class="kpis">
     <div class="kpi"><div class="n">506</div><div class="l">Total contacts</div></div>
     <div class="kpi"><div class="n" style="color:var(--lead)">186</div><div class="l">Genuine leads (37%)</div></div>
-    <div class="kpi"><div class="n" style="color:var(--noise)">317</div><div class="l">Noise / non-leads (63%)</div></div>
-    <div class="kpi"><div class="n">3</div><div class="l">Internal / test</div></div>
+    <div class="kpi"><div class="n">$2,624</div><div class="l">Google Ads spend</div></div>
+    <div class="kpi"><div class="n">$131</div><div class="l">Avg cost / conversion</div></div>
   </div>
 
-  <div class="card full">
+  <div class="card">
+    <h2>How leads are generated, captured, notified &amp; stored</h2>
+    <div class="h-sub">Every channel drives a <b>call</b> or a <b>form/DM</b>; all roads end in a booked consult logged in the CRM.</div>
+    <div class="flow">
+      <div class="stage">
+        <div class="stage-h">1 · Sources &amp; CTAs</div>
+        <div class="box g"><b>Google Ads – Search</b><span>CTA: call or visit funnel</span></div>
+        <div class="box g"><b>Google LSA</b><span>CTA: tap-to-call</span></div>
+        <div class="box g"><b>Google Business Profile</b><span>CTA: call / directions</span></div>
+        <div class="box w"><b>Website + Funnel</b><span>CTA: "I'm In – Let's Talk" / call</span></div>
+        <div class="box f"><b>Facebook Ads</b><span>CTA: lead form / message</span></div>
+        <div class="box f"><b>Facebook &amp; Instagram DMs</b><span>CTA: "DM us"</span></div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="stage">
+        <div class="stage-h">2 · Capture</div>
+        <div class="box p"><b>📞 Calls</b><span>770-762-2247 → forwards to AI receptionist 470-804-0595 (20s)</span></div>
+        <div class="box w"><b>📝 Forms</b><span>Funnel / website form → GHL</span></div>
+        <div class="box f"><b>💬 DMs</b><span>Handled by AI chat agent</span></div>
+        <div class="box lt"><b>AI qualifies &amp; books</b><span>Transcript + summary saved to contact</span></div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="stage">
+        <div class="stage-h">3 · CRM (GoHighLevel)</div>
+        <div class="box lt"><b>Contact created / updated</b><span>De-duped by phone &amp; email</span></div>
+        <div class="box lt"><b>Source tag applied</b><span>source-google-ads, -facebook, -instagram, -google-lsa, -inbound-call…</span></div>
+        <div class="box lt"><b>Enters pipeline</b><span>New Lead → Initial Consultation → Invoice/Agreement → Won (＋ No-Show / Nurture)</span></div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="stage">
+        <div class="stage-h">4 · Notify &amp; Store</div>
+        <div class="box lt"><b>📅 Consult on Paul's calendar</b><span>Booked automatically by the AI</span></div>
+        <div class="box lt"><b>✉️ Auto SMS + email</b><span>Confirmation &amp; reminders to the lead</span></div>
+        <div class="box lt"><b>🔔 New-lead alert to Paul</b><span>Via GHL workflow notification</span></div>
+        <div class="box lt"><b>🗄️ Stored for follow-up</b><span>Tags + transcript + consult type → smart lists &amp; nurture campaigns</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Phone number routing</h2>
+    <div class="h-sub">Which number does what, and where the call actually lands.</div>
+    <table>
+      <thead><tr><th>Number</th><th>Used for</th><th>Routes to</th><th>Captured in CRM?</th></tr></thead>
+      <tbody>
+        <tr><td><b>(770) 762-2247</b></td><td>Google Ads PPC, Google Business Profile, funnel page, all GHL SMS</td><td>Forwards to AI receptionist <b>(470) 804-0595</b>, 20s ring</td><td><span class="pill lead">Yes</span></td></tr>
+        <tr><td><b>(770) 637-9367</b></td><td>Google LSA + entire main website</td><td>Standalone (outside GHL)</td><td><span class="pill noise">Recent calls NOT captured</span></td></tr>
+        <tr><td><b>(470) 804-0595</b></td><td>AI receptionist inbound line</td><td>AI voice agent (Assistable)</td><td><span class="pill lead">Yes</span></td></tr>
+        <tr><td><b>(470) 928-4191</b></td><td>Second AI receptionist line</td><td>Same AI agent</td><td><span class="pill lead">Yes</span></td></tr>
+        <tr><td><b>(770) 980-9888</b></td><td>Paul's personal cell</td><td>Paul directly</td><td><span class="pill int">N/A (not marketing)</span></td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn"><b>Action:</b> the LSA/website number (770-637-9367) is standalone — the 3 most recent LSA calls (Jun 2026) never reached the CRM. Give LSA its own tracked number that forwards to the AI line so every LSA call is captured &amp; attributed.</div>
+  </div>
+
+  <div class="card">
     <h2>Genuine leads by source (186)</h2>
     <div class="bar-row"><div class="lab">Instagram</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#3b74d4"></div></div><div class="val">67</div></div>
     <div class="bar-row"><div class="lab">Facebook</div><div class="bar-track"><div class="bar-fill" style="width:91%;background:#2e9e6b"></div></div><div class="val">61</div></div>
-    <div class="bar-row"><div class="lab">Inbound Call</div><div class="bar-track"><div class="bar-fill" style="width:59.7%;background:#e0a92e"></div></div><div class="val">40</div></div>
+    <div class="bar-row"><div class="lab">Inbound Call</div><div class="bar-track"><div class="bar-fill" style="width:59.7%;background:#e0912e"></div></div><div class="val">40</div></div>
     <div class="bar-row"><div class="lab">Google LSA</div><div class="bar-track"><div class="bar-fill" style="width:17.9%;background:#8a5cd6"></div></div><div class="val">12</div></div>
-    <div class="bar-row"><div class="lab">Website Form</div><div class="bar-track"><div class="bar-fill" style="width:4.5%;background:#d9663f"></div></div><div class="val">3</div></div>
+    <div class="bar-row"><div class="lab">Website Form</div><div class="bar-track"><div class="bar-fill" style="width:4.5%;background:#2fa8b8"></div></div><div class="val">3</div></div>
     <div class="bar-row"><div class="lab">Chat Widget</div><div class="bar-track"><div class="bar-fill" style="width:4.5%;background:#3bb4c4"></div></div><div class="val">3</div></div>
+    <div class="callout info">Only ~37% of the 506 contacts are genuine leads. The rest is noise: 181 zero-engagement Instagram bot/spam accounts, 74 phone spam/robocalls, 62 missed/hangup calls.</div>
   </div>
 
-  <div class="card full">
+  <div class="card">
+    <h2>Google Ads — cost &amp; conversion detail</h2>
+    <div class="h-sub">Account 6624766996 · via Supermetrics · Oct 2025 – Jul 2026</div>
+    <h3 style="font-size:13px;margin:6px 0 8px">Monthly trend</h3>
+    <table>
+      <thead><tr><th>Month</th><th class="n">Spend</th><th class="n">Clicks</th><th class="n">CPC</th><th class="n">Conv.</th><th class="n">Cost / conv.</th></tr></thead>
+      <tbody>
+        <tr><td>Oct 2025</td><td class="n">$96.58</td><td class="n">29</td><td class="n">$3.33</td><td class="n">2</td><td class="n">$48.29</td></tr>
+        <tr><td>Nov 2025</td><td class="n">$595.78</td><td class="n">174</td><td class="n">$3.42</td><td class="n">7</td><td class="n">$85.11</td></tr>
+        <tr><td>Dec 2025</td><td class="n">$248.39</td><td class="n">139</td><td class="n">$1.79</td><td class="n">3</td><td class="n">$82.80</td></tr>
+        <tr><td>Jan 2026</td><td class="n">$274.14</td><td class="n">151</td><td class="n">$1.82</td><td class="n">1</td><td class="n">$274.14</td></tr>
+        <tr><td>Feb 2026</td><td class="n">$264.71</td><td class="n">156</td><td class="n">$1.70</td><td class="n">2</td><td class="n">$132.35</td></tr>
+        <tr><td>Mar 2026</td><td class="n">$226.84</td><td class="n">173</td><td class="n">$1.31</td><td class="n">0</td><td class="n">—</td></tr>
+        <tr><td>Apr 2026</td><td class="n">$223.74</td><td class="n">165</td><td class="n">$1.36</td><td class="n">1</td><td class="n">$223.74</td></tr>
+        <tr><td>May 2026</td><td class="n">$218.21</td><td class="n">167</td><td class="n">$1.31</td><td class="n">1</td><td class="n">$218.21</td></tr>
+        <tr><td>Jun 2026</td><td class="n">$406.34</td><td class="n">132</td><td class="n">$3.08</td><td class="n">3</td><td class="n">$135.45</td></tr>
+        <tr><td>Jul 2026*</td><td class="n">$69.36</td><td class="n">66</td><td class="n">$1.05</td><td class="n">0</td><td class="n">—</td></tr>
+        <tr class="tot"><td>Total</td><td class="n">$2,624</td><td class="n">1,352</td><td class="n">$1.94</td><td class="n">20</td><td class="n">$131</td></tr>
+      </tbody>
+    </table>
+    <div class="mini">*July partial (through Jul 9).</div>
+    <div class="callout warn"><b>Cost efficiency is declining.</b> Q4 2025 delivered 12 conversions on $941 (~$78 each). 2026 YTD delivered only 8 conversions on $1,683 (~$210 each) — cost per conversion nearly <b>tripled</b>, and Mar &amp; Jul produced 0 conversions despite ~$296 spend combined. Worth auditing conversion tracking and keywords.</div>
+    <h3 style="font-size:13px;margin:18px 0 8px">By campaign</h3>
+    <table>
+      <thead><tr><th>Campaign</th><th class="n">Spend</th><th class="n">Impr.</th><th class="n">Clicks</th><th class="n">CPC</th><th class="n">CTR</th><th class="n">Conv.</th><th class="n">Cost / conv.</th></tr></thead>
+      <tbody>
+        <tr><td>Shift Scale Personal Training (Search)</td><td class="n">$2,123</td><td class="n">22,604</td><td class="n">715</td><td class="n">$2.97</td><td class="n">3.16%</td><td class="n">9</td><td class="n">$236</td></tr>
+        <tr><td>Google LSA (Local Services)</td><td class="n">$476</td><td class="n">6,944</td><td class="n">627</td><td class="n">$0.76</td><td class="n">9.03%</td><td class="n">11</td><td class="n">$43</td></tr>
+        <tr><td>Video Efficient reach</td><td class="n">$26</td><td class="n">5,708</td><td class="n">10</td><td class="n">$2.57</td><td class="n">0.18%</td><td class="n">0</td><td class="n">—</td></tr>
+      </tbody>
+    </table>
+    <div class="callout good"><b>LSA is your most efficient paid channel by far:</b> $0.76 CPC, 9.0% CTR, and <b>$43 per conversion</b> — vs. $2.97 CPC / 3.2% CTR / <b>$236 per conversion</b> on Search. Shifting budget toward LSA (and fixing its call capture) is the clearest ROI lever.</div>
+    <div class="callout info">Note: conversions carry no assigned dollar value in the account (conversion value = conversion count), so true ROAS/revenue can't be computed yet. Assign values to key conversions (e.g., a booked consult) to unlock revenue reporting.</div>
+  </div>
+
+  <div class="card">
     <h2>Database composition (506 contacts)</h2>
     <div class="stack">
       <span style="width:36.8%;background:var(--lead)">Leads 186</span>
@@ -78,14 +185,7 @@
     </div>
   </div>
 
-  <div class="card full">
-    <h2>Inbound phone calls — quality split</h2>
-    <div class="bar-row"><div class="lab">Genuine prospects</div><div class="bar-track"><div class="bar-fill" style="width:54.1%;background:#2e9e6b"></div></div><div class="val">40</div></div>
-    <div class="bar-row"><div class="lab">Spam / robocalls</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#d9663f"></div></div><div class="val">74</div></div>
-    <div class="bar-row"><div class="lab">No transcript</div><div class="bar-track"><div class="bar-fill" style="width:83.8%;background:#9aa4b8"></div></div><div class="val">62</div></div>
-  </div>
-
-  <div class="card full">
+  <div class="card">
     <h2>All source tags applied in GHL</h2>
     <table>
       <thead><tr><th>Tag</th><th>Type</th><th class="n">Contacts</th><th>Meaning</th></tr></thead>
@@ -93,10 +193,10 @@
         <tr><td><code>source-instagram</code></td><td><span class="pill lead">Lead</span></td><td class="n">67</td><td style="color:var(--muted)">Instagram DMs with real engagement</td></tr>
         <tr><td><code>source-facebook</code></td><td><span class="pill lead">Lead</span></td><td class="n">61</td><td style="color:var(--muted)">Facebook paid ads + FB lead forms</td></tr>
         <tr><td><code>source-inbound-call</code></td><td><span class="pill lead">Lead</span></td><td class="n">40</td><td style="color:var(--muted)">Genuine inbound phone prospects (talked / booked)</td></tr>
-        <tr><td><code>source-google-lsa</code></td><td><span class="pill lead">Lead</span></td><td class="n">12</td><td style="color:var(--muted)">Google Local Service Ads calls/messages (from LSA export)</td></tr>
+        <tr><td><code>source-google-lsa</code></td><td><span class="pill lead">Lead</span></td><td class="n">12</td><td style="color:var(--muted)">Google Local Service Ads calls/messages</td></tr>
         <tr><td><code>source-website-form</code></td><td><span class="pill lead">Lead</span></td><td class="n">3</td><td style="color:var(--muted)">GHL funnel / website form fills</td></tr>
         <tr><td><code>source-chat-widget</code></td><td><span class="pill lead">Lead</span></td><td class="n">3</td><td style="color:var(--muted)">Website chat-widget conversations</td></tr>
-        <tr><td><code>instagram-contact</code></td><td><span class="pill noise">Noise</span></td><td class="n">181</td><td style="color:var(--muted)">Zero-engagement IG accounts (bot/spam) — contacts, not leads</td></tr>
+        <tr><td><code>instagram-contact</code></td><td><span class="pill noise">Noise</span></td><td class="n">181</td><td style="color:var(--muted)">Zero-engagement IG accounts (bot/spam)</td></tr>
         <tr><td><code>inbound-call-spam</code></td><td><span class="pill noise">Noise</span></td><td class="n">74</td><td style="color:var(--muted)">Robocalls / telemarketers</td></tr>
         <tr><td><code>inbound-call-no-transcript</code></td><td><span class="pill noise">Noise</span></td><td class="n">62</td><td style="color:var(--muted)">Missed calls / immediate hangups</td></tr>
         <tr><td><code>internal-test</code></td><td><span class="pill int">Internal</span></td><td class="n">3</td><td style="color:var(--muted)">Owner + ShiftScale test records</td></tr>
@@ -104,45 +204,24 @@
     </table>
   </div>
 
-  <div class="card full">
+  <div class="card">
     <h2>Paid ad channels — status &amp; performance</h2>
     <table>
-      <thead><tr><th>Channel</th><th>Status</th><th class="n">Leads</th><th class="n">Booked</th><th class="n">Book rate</th><th>Notes</th></tr></thead>
+      <thead><tr><th>Channel</th><th>Status</th><th class="n">Leads/Conv.</th><th class="n">Spend</th><th class="n">Cost/conv.</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td><b>Facebook — Paid Ads</b></td><td><span class="pill lead">Connected</span></td><td class="n">24</td><td class="n">9</td><td class="n">37%</td><td style="color:var(--muted)">"Tailored leads/messages" campaigns, Oct–Nov 2025. Best-converting paid channel.</td></tr>
-        <tr><td><b>Facebook — Organic (Messenger)</b></td><td><span class="pill lead">Connected</span></td><td class="n">85</td><td class="n">14</td><td class="n">16%</td><td style="color:var(--muted)">Organic DMs, not paid.</td></tr>
-        <tr><td><b>Google Ads</b></td><td><span class="pill lead">Connected</span></td><td class="n">20</td><td class="n">—</td><td class="n">—</td><td style="color:var(--muted)">20 conversions / $2,624 spend (Oct 2025–Jul 2026). Full breakdown below.</td></tr>
-        <tr><td><b>Google LSA</b></td><td><span class="pill lead">Tracked</span></td><td class="n">12</td><td class="n">2</td><td class="n">17%</td><td style="color:var(--muted)">From LSA export (5 added, 7 reclassified). 3 most recent (Jun 2026) not captured — routing likely changed.</td></tr>
+        <tr><td><b>Facebook — Paid Ads</b></td><td><span class="pill lead">Connected</span></td><td class="n">24</td><td class="n">n/a*</td><td class="n">n/a*</td><td style="color:var(--muted)">9 booked (37% rate). *Connect FB Ad Account in Supermetrics for spend.</td></tr>
+        <tr><td><b>Facebook — Organic (Messenger)</b></td><td><span class="pill lead">Connected</span></td><td class="n">85</td><td class="n">—</td><td class="n">—</td><td style="color:var(--muted)">Organic DMs, 14 booked (16%).</td></tr>
+        <tr><td><b>Google Ads — Search</b></td><td><span class="pill lead">Connected</span></td><td class="n">9</td><td class="n">$2,123</td><td class="n">$236</td><td style="color:var(--muted)">38 calls; highest spend, weakest efficiency.</td></tr>
+        <tr><td><b>Google LSA</b></td><td><span class="pill lead">Connected</span></td><td class="n">11</td><td class="n">$476</td><td class="n">$43</td><td style="color:var(--muted)">Best ROI. Fix call capture into CRM.</td></tr>
       </tbody>
     </table>
   </div>
 
-  <div class="card full">
-    <h2>Google Ads — historical performance (via Supermetrics · Oct 2025–Jul 2026)</h2>
-    <div class="kpis" style="margin-bottom:16px">
-      <div class="kpi"><div class="n">$2,624</div><div class="l">Total spend</div></div>
-      <div class="kpi"><div class="n">20</div><div class="l">Conversions</div></div>
-      <div class="kpi"><div class="n">38</div><div class="l">Calls from ads</div></div>
-      <div class="kpi"><div class="n">$131</div><div class="l">Avg cost / conversion</div></div>
-    </div>
-    <table>
-      <thead><tr><th>Campaign</th><th class="n">Spend</th><th class="n">Clicks</th><th class="n">Conv.</th><th class="n">Calls</th><th class="n">Cost/conv.</th></tr></thead>
-      <tbody>
-        <tr><td>Shift Scale Personal Training (Search)</td><td class="n">$2,123</td><td class="n">715</td><td class="n">9</td><td class="n">38</td><td class="n">$236</td></tr>
-        <tr><td>Google LSA (Local Services)</td><td class="n">$476</td><td class="n">625</td><td class="n">11</td><td class="n">0</td><td class="n">$43</td></tr>
-        <tr><td>Video Efficient reach</td><td class="n">$26</td><td class="n">10</td><td class="n">0</td><td class="n">0</td><td class="n">—</td></tr>
-      </tbody>
-    </table>
-    <div class="foot" style="margin-top:12px">Google Ads conversions are aggregate counts (no individual contact data). The Search campaign's 38 calls route through the AI receptionist into GHL; LSA is the most cost-efficient at $43/conversion vs. $236 for Search.</div>
-  </div>
-
-  <div class="card full">
+  <div class="card">
     <div class="foot">
-      <b>How to pull this live in GHL:</b> Contacts → Smart Lists → filter <b>Tags</b>.
-      All real leads = Tags <i>is one of</i> <code>source-instagram</code>, <code>source-facebook</code>, <code>source-google-lsa</code>, <code>source-inbound-call</code>, <code>source-website-form</code>, <code>source-chat-widget</code>.
-      Exclude junk = Tags <i>is none of</i> <code>instagram-contact</code>, <code>inbound-call-spam</code>, <code>inbound-call-no-transcript</code>, <code>internal-test</code>.
+      <b>Pull this live in GHL:</b> Contacts → Smart Lists → filter <b>Tags</b>. All real leads = Tags <i>is one of</i> the six <code>source-*</code> tags; exclude junk = Tags <i>is none of</i> <code>instagram-contact</code>, <code>inbound-call-spam</code>, <code>inbound-call-no-transcript</code>, <code>internal-test</code>.
       <br><br>
-      <b>Headline:</b> ~37% of the database is genuine leads. Instagram bot/spam (181) and phone spam/robocalls (74) dominate the rest. Real acquisition is led by Instagram DMs and inbound phone; Facebook is third; Google LSA now tracked; almost no website form-fills.
+      <b>Top actions:</b> (1) shift budget toward LSA ($43 vs $236/conv) and fix its call capture; (2) audit Google Ads conversion tracking — 2026 CPA tripled; (3) assign conversion values to enable revenue/ROAS reporting; (4) add GCLID capture so Google leads tie to campaigns going forward.
     </div>
   </div>
 </body>
