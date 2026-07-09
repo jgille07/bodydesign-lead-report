@@ -183,6 +183,7 @@
       <span><i style="background:var(--noise)"></i>Noise / non-leads — 317 (63%)</span>
       <span><i style="background:var(--int)"></i>Internal / test — 3</span>
     </div>
+    <div class="callout warn"><b>What is "Noise"?</b> These are contacts that landed in the CRM but aren't real prospects, so they're tagged separately and excluded from lead reporting. Three kinds: <b>(1) Instagram bot/spam accounts (181)</b> auto-created when spam or promo accounts view/interact with the profile — they have no phone, email, or engagement; <b>(2) phone spam &amp; robocalls (74)</b> — telemarketers and "Google Business" scam calls the AI answered; <b>(3) missed calls / immediate hangups (62)</b> with no conversation captured. This is normal inbound junk, not a system error — separating it keeps the real-lead numbers honest and stops the team chasing dead contacts.</div>
   </div>
 
   <div class="card">
@@ -209,12 +210,23 @@
     <table>
       <thead><tr><th>Channel</th><th>Status</th><th class="n">Leads/Conv.</th><th class="n">Spend</th><th class="n">Cost/conv.</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td><b>Facebook — Paid Ads</b></td><td><span class="pill lead">Connected</span></td><td class="n">24</td><td class="n">n/a*</td><td class="n">n/a*</td><td style="color:var(--muted)">9 booked (37% rate). *Connect FB Ad Account in Supermetrics for spend.</td></tr>
+        <tr><td><b>Facebook — Paid Ads</b></td><td><span class="pill lead">Connected</span></td><td class="n">24</td><td class="n">n/a*</td><td class="n">n/a*</td><td style="color:var(--muted)">9 booked (37% rate). *Authorize FB Ads in Supermetrics for spend.</td></tr>
         <tr><td><b>Facebook — Organic (Messenger)</b></td><td><span class="pill lead">Connected</span></td><td class="n">85</td><td class="n">—</td><td class="n">—</td><td style="color:var(--muted)">Organic DMs, 14 booked (16%).</td></tr>
         <tr><td><b>Google Ads — Search</b></td><td><span class="pill lead">Connected</span></td><td class="n">9</td><td class="n">$2,123</td><td class="n">$236</td><td style="color:var(--muted)">38 calls; highest spend, weakest efficiency.</td></tr>
         <tr><td><b>Google LSA</b></td><td><span class="pill lead">Connected</span></td><td class="n">11</td><td class="n">$476</td><td class="n">$43</td><td style="color:var(--muted)">Best ROI. Fix call capture into CRM.</td></tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="card">
+    <h2>Recommended approach — improving performance</h2>
+    <div class="h-sub">High-level plan based on the data above.</div>
+    <div class="box lt" style="color:var(--ink)"><b>1 · Reallocate spend to what actually converts</b><span style="color:var(--muted)">Google LSA converts at $43 vs $236 on Search, and paid Facebook books 37% of leads. Shift budget toward LSA and paid social; tighten or restructure the Search campaign.</span></div>
+    <div class="box lt" style="color:var(--ink)"><b>2 · Fix the leaks losing leads today</b><span style="color:var(--muted)">Route the LSA number to the AI so those calls are captured, and audit Google Ads conversion tracking (2026 cost/conversion tripled; two months booked zero).</span></div>
+    <div class="box lt" style="color:var(--ink)"><b>3 · Complete the measurement picture</b><span style="color:var(--muted)">Authorize Facebook spend, add GCLID capture, and assign dollar values to conversions so every channel can be judged on true cost-per-booked-client and ROI.</span></div>
+    <div class="box lt" style="color:var(--ink)"><b>4 · Protect lead quality &amp; follow-up</b><span style="color:var(--muted)">Auto-tag every new lead by source and keep noise filtered, so the team focuses only on the ~37% real prospects and can run targeted nurture to un-booked and "not ready" leads.</span></div>
+    <div class="box lt" style="color:var(--ink)"><b>5 · Review monthly against this report</b><span style="color:var(--muted)">Use this live dashboard as the single source of truth; adjust budget and messaging each month based on cost-per-lead and booking rate by channel.</span></div>
+    <div class="callout good"><b>The opportunity:</b> only ~37% of contacts are real leads today and the best channel (LSA) is under-funded while the most expensive (Search) is under-performing. Cutting waste and moving spend to proven channels should raise booked consults without necessarily raising ad budget.</div>
   </div>
 
   <div class="card">
